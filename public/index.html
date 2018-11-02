@@ -2,42 +2,23 @@
 <html lang="en">
 <head>
    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-  <meta charset="UTF-8">
+   <link rel="stylesheet" href="main.css">
+   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+   <meta charset="UTF-8">
+   
   <title>Creative Drawing</title>
-  <link rel="stylesheet" href="style.css">
-  
-  <form>
-    Enter a word: <input type="text" id="imageform" value=""><br>
-    <button id="imagebutton">Submit</button><br>
-   Image: <br> <span id="imagedef">Empty</span>
- </form>
-  
-</head>
-
-
-
-<body>
-
-  <canvas class="whiteboard" ></canvas>
-
-  <div class="colors">
-    <div class="color black"></div>
-    <div class="color red"></div>
-    <div class="color green"></div>
-    <div class="color blue"></div>
-    <div class="color yellow"></div>
-    <div class="color orange"></div>
-    <div class="color brown"></div>
-    <div class ="color pink"></div>
-    <div class ="color purple"></div>
+  <div style="text-align: center;">
+    <h1 style="font-size: 50px; margin-bottom: 0;">PhotoDraw</h1>
+    <h3>Choose a photo and begin your artwork!</h3>
+    
+    <form>
+      Enter a word: <input type="text" id="imageform" value=""><br>
+      <button id="imagebutton">Submit</button><br>
+     Image: <br> <span id="imagedef">Empty</span>
+   </form>
   </div>
-
-  <script src="/socket.io/socket.io.js"></script>
-  <script src="/main.js"></script>
-  
-  <script>
-
-    $("#imagebutton").click(function(event) {
+ <script>
+    $(document).ready($("#imagebutton").click(function(event) {
             event.preventDefault();
             var url = "q=" + $("#imageform").val();
             $.getJSON(url, function(data) {
@@ -45,16 +26,29 @@
             everything = "<ul>";
             $.each(data, function(i, item){
              everything += "<li>"+ hits[1].previewURL +"</li>";
-            })
+            });
             everything += "</ul>";
-             console.log(everything)
+             console.log(everything);
             $("#imagedef").html(everything);
            
-            })
-        })
+            });
+        }));
 
-
-        </script> 
+        </script>
   
+</head>
+
+
+
+<body style="background-color: #4abdac; ">
+  <div style="text-align: center;">
+    <iframe src="frame.html" width="900" height="650" scrolling="no" class="iframe-class" frameborder="0"
+      style="box-shadow: 5px 10px 20px #fc4a1a; margin-top: 50px; margin-left: auto;"></iframe>
+          
+    <div style="margin-top: 100px;">
+      <img src="logo.png" style="width: 100px;"></img>
+      <p>This website is powered by pixabay photos</p>
+    </div>
+  </div>
 </body>
 </html>

@@ -1,22 +1,15 @@
 
-/**
- * Fix user-agent
- */
-
 * {
-  box-sizing: border-box;
+  margin: auto;
 }
 
 html, body {
   height: 100%;
-  width: ;
-  margin: 0;
+  width: 100%;
+  margin: auto;
   padding: 0;
+  background-color: #fff6e5;
 }
-
-/**
- * Canvas
- */
 
 .whiteboard {
   height: 500 px;
@@ -30,12 +23,14 @@ html, body {
 
 .colors {
   position: fixed;
+  margin-top: 20px;
+  margin-left: 15px;
 }
 
 .color {
   display: inline-block;
-  height: 48px;
-  width: 48px;
+  height: 40px;
+  width: 40px;
 }
 
 .color.black { background-color: black; }
@@ -43,7 +38,9 @@ html, body {
 .color.green { background-color: green; }
 .color.blue { background-color: blue; }
 .color.yellow { background-color: yellow; }
-.color.orange {background-color: orange; }
-.color.brown {background-color: brown; }
-.color.pink {background-color: pink; }
-.color.purple {background-color: purple; }
+.color.orange { background-color: orange; }
+.color.brown { background-color: brown; }
+.color.pink { background-color: pink; }
+.color.purple { background-color: purple; }
+.color.lightblue {background-color: lightblue; }
+
