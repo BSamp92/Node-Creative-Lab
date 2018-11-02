@@ -15,5 +15,10 @@
     "start": "node index"
   },
   "author": "Damien Arrachequesne",
-  "license": "MIT"
+  "license": "MIT",
+  "eslintConfig": {
+    "env": {
+      "jquery" : true
+    }
+  }
 }

@@ -1,7 +1,4 @@
 
-* {
-  margin: auto;
-}
 
 html, body {
   height: 100%;
@@ -12,8 +9,8 @@ html, body {
 }
 
 .whiteboard {
-  height: 500 px;
-  width: 300 px;
+  height: 500;
+  width: 300;
   position: absolute;
   left: 0;
   right: 0;
