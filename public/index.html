@@ -9,17 +9,14 @@
   <form>
     Enter a word: <input type="text" id="imageform" value=""><br>
     <button id="imagebutton">Submit</button><br>
-    Definition: <br> <span id="imagedef">Empty</span>
-</form>
+   Image: <br> <span id="imagedef">Empty</span>
+ </form>
   
 </head>
 
 
 
 <body>
-<script type="text/javascript">
-  google.load("search", "1");
-</script>
 
   <canvas class="whiteboard" ></canvas>
 
@@ -42,16 +39,16 @@
 
     $("#imagebutton").click(function(event) {
             event.preventDefault();
-            var url = $("#imageform").val();
+            var url = "q=" + $("#imageform").val();
             $.getJSON(url, function(data) {
             var everything;
             everything = "<ul>";
             $.each(data, function(i, item){
-             everything += "<li>"+data[i].defenition+"</li>";
+             everything += "<li>"+ hits[1].previewURL +"</li>";
             })
             everything += "</ul>";
-             console.log(everything);
-            $("#owldef").html(everything);
+             console.log(everything)
+            $("#imagedef").html(everything);
            
             })
         })

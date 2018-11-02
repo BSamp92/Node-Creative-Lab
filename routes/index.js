@@ -11,11 +11,9 @@ router.get('/', function(req, res, next) {
 
 router.get('/image', function(req, res, next) {
 
-    var url = "https://www.googleapis.com/customsearch/v1?key=AIzaSyC3XEHstGPBvc_retznQ2eFfyrI0rT9x1Q&cx=011610929792324095125:oloxamxnes8&q="
-    console.log("query ", req.query)
+    var url = "https://pixabay.com/10570580-b2febe00f39a25b7ea8bde2e4/"
+    console.log("query ", req.query); 
     url += req.query['q'];
-    url += req.query['q'];
-    url += "?format=json";
     request(url).pipe(res);
 
 })
