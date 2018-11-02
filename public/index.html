@@ -1,11 +1,25 @@
 <!doctype html>
 <html lang="en">
 <head>
+   <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
   <meta charset="UTF-8">
-  <title>Socket.IO whiteboard</title>
+  <title>Creative Drawing</title>
   <link rel="stylesheet" href="style.css">
+  
+  <form>
+    Enter a word: <input type="text" id="imageform" value=""><br>
+    <button id="imagebutton">Submit</button><br>
+    Definition: <br> <span id="imagedef">Empty</span>
+</form>
+  
 </head>
+
+
+
 <body>
+<script type="text/javascript">
+  google.load("search", "1");
+</script>
 
   <canvas class="whiteboard" ></canvas>
 
@@ -15,9 +29,35 @@
     <div class="color green"></div>
     <div class="color blue"></div>
     <div class="color yellow"></div>
+    <div class="color orange"></div>
+    <div class="color brown"></div>
+    <div class ="color pink"></div>
+    <div class ="color purple"></div>
   </div>
 
   <script src="/socket.io/socket.io.js"></script>
   <script src="/main.js"></script>
+  
+  <script>
+
+    $("#imagebutton").click(function(event) {
+            event.preventDefault();
+            var url = $("#imageform").val();
+            $.getJSON(url, function(data) {
+            var everything;
+            everything = "<ul>";
+            $.each(data, function(i, item){
+             everything += "<li>"+data[i].defenition+"</li>";
+            })
+            everything += "</ul>";
+             console.log(everything);
+            $("#owldef").html(everything);
+           
+            })
+        })
+
+
+        </script> 
+  
 </body>
 </html>
